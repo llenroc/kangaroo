@@ -299,50 +299,8 @@ namespace Hidistro.ControlPanel.Store
             return (new DistributorsDao()).GetScopeListByUserId(query);
         }
 
-        public static DbQueryResult GetMilkCards(MilkCardQuery query)
-        {
-            return (new DistributorsDao()).GetMilkCards(query);
-        }
 
-        public static bool CreateMilkCards(MilkCardInfo mcinfo,int cardcount)
-        {
-            return new DistributorsDao().CreateMilkCards(mcinfo, cardcount);
-        }
 
-        public static bool UpdateMilkCard(MilkCardInfo mcinfo)
-        {
-            return new DistributorsDao().UpdateMilkCard(mcinfo);
-        }
-
-        public static MilkCardInfo GetMilkCard(Guid cardid)
-        {
-            return new DistributorsDao().GetMilkCard(cardid);
-        }
-
-        public static MilkCardInfo GetMilkCard(string cardnum,string cardpwd)
-        {
-            return new DistributorsDao().GetMilkCard(cardnum, cardpwd);
-        }
-
-        public static int SendMilkCards(string[] openids, string [] cardids)
-        {
-            return new DistributorsDao().SendMilkCards(openids, cardids);
-        }
-
-        public static int GetMilkCardCount(int userid)
-        {
-            return new DistributorsDao().GetMilkCardCount(userid);
-        }
-
-        public static DataTable GetMilkCardList(int userid)
-        {
-            return new DistributorsDao().GetMilkCardList(userid);
-        }
-
-        public static DbQueryResult GetQuestList(QuestInfoQuery query)
-        {
-            return (new DistributorsDao()).GetQuestList(query);
-        }
 
         public static string GetQuestCount(QuestInfoQuery query)
         {

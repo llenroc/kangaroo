@@ -13,7 +13,7 @@
 
 function deleteCartProduct(obj) {
     var type = $(obj).attr("stype");
-    if (type == null || type == undefined) {
+    if (type === null || type === undefined) {
         type = 0;
     }
     var limitedTimeDiscountId = $(obj).attr("limitedTimeDiscountId");
@@ -22,7 +22,7 @@ function deleteCartProduct(obj) {
         type: 'post', dataType: 'json', timeout: 10000,
         data: { action: "DeleteCartProduct", skuId: $(obj).attr("skuId"), type: type, limitedTimeDiscountId: limitedTimeDiscountId },
         success: function (resultData) {
-            if (resultData.Status == "OK") {
+            if (resultData.Status === "OK") {
                 location.href = "/Vshop/ShoppingCart.aspx";
             }
         }
@@ -35,7 +35,7 @@ function chageQuantity(obj) {
         type: 'post', dataType: 'json', timeout: 10000,
         data: { action: "ChageQuantity", skuId: $(obj).attr("skuId"), quantity: parseInt($(obj).val()) },
         success: function (resultData) {
-            if (resultData.Status == "OK") {
+            if (resultData.Status === "OK") {
                 location.href = "/Vshop/ShoppingCart.aspx";
             }
             else {
@@ -55,13 +55,13 @@ function chageQuantity(obj) {
 
 function chageShippingType() {
     var freight = 0;
-    if ($("#selectShippingType").val() != "-1") {
+    if ($("#selectShippingType").val() !== "-1") {
         var selectedShippingType = $("#selectShippingType option:selected").text();
         freight = parseFloat(selectedShippingType.substring(selectedShippingType.lastIndexOf("￥") + 1));
     }
 
     var discountValue = 0;
-    if ($("#selectCoupon").val() != undefined && $("#selectCoupon").val() != "") {
+    if ($("#selectCoupon").val() !== undefined && $("#selectCoupon").val() !== "") {
         var selectCoupon = $("#selectCoupon option:selected").text();
         discountValue = parseFloat(selectCoupon.substring(selectCoupon.lastIndexOf("￥") + 1));
     }
@@ -72,13 +72,13 @@ function chageShippingType() {
 
 function chageCoupon() {
     var freight = 0;
-    if ($("#selectShippingType").val() != "-1") {
+    if ($("#selectShippingType").val() !== "-1") {
         var selectedShippingType = $("#selectShippingType option:selected").text();
         freight = parseFloat(selectedShippingType.substring(selectedShippingType.lastIndexOf("￥") + 1));
     }
 
     var discountValue = 0;
-    if ($("#selectCoupon").val() != "") {
+    if ($("#selectCoupon").val() !== "") {
         var selectCoupon = $("#selectCoupon option:selected").text();
         discountValue = parseFloat(selectCoupon.substring(selectCoupon.lastIndexOf("￥") + 1));
     }
@@ -101,7 +101,7 @@ function submmitorder() {
     var shippingType = "";
     var b = false;
     $(".selectShippingTypeValue").each(function () {
-        if ($(this).val() == "") {
+        if ($(this).val() === "") {
             b = true;
         }
         else {
@@ -149,21 +149,13 @@ function submmitorder() {
         return false;
     }
 
-    //牛奶配送的任务单一性认证
-    var $containerQuantityPerDay = $("[role='quantityPerDay']");
-    var $containerSendStartDate = $("[role='sendStartDate']"); 
-    var $containerSendDays = $("[role='sendDays']");
-    if ($containerQuantityPerDay.length + $containerSendStartDate.length + $containerSendDays.length != 3) {
-        alert_h("一个订单只允许包含一个配送任务");
-        return false;
-    }
 
     if (!$('#selectSiteShipRegion').val()) {
         alert_h("请选择配送区域");
         return false;
     }
     //对比当前用户地址和选择的门店配送区域,若不匹配至区级,则视为配送范围之外
-    if ($('#ShippingRegionId').val() != $('#selectSiteShipRegion').val()) {
+    if ($('#ShippingRegionId').val() !== $('#selectSiteShipRegion').val()) {
         alert_h("您当前的配送地址在配送范围之外");
         return false;
     }
@@ -185,7 +177,7 @@ function submmitorder() {
         },
         success: function (resultData) {
             maskayer(1);
-            if (resultData.Status == "OK") {
+            if (resultData.Status === "OK") {
 
                 //if (resultData.OrderMarkingStatus=="0")
                 location.href = "/Vshop/FinishOrder.aspx?orderId=" + resultData.OrderId;

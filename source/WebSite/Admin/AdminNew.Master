@@ -37,6 +37,7 @@
         <input type="hidden" id="hiddTelReg" runat="server" value="" />
         <div class="ui-header-inner clearfix">
             <h1 class="ui-header-logo">
+                <img src="../images/login-title1.png"  style="height:54px;"/>
                 <a href="/admin/" title="管理后台">
                     <span class="version"><i>3.3.1</i></span>
                 </a>

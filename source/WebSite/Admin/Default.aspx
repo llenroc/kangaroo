@@ -1,6 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Hidistro.UI.Web.Admin.Default" 
-    CodeBehind="Default.aspx.cs" 
- MasterPageFile="~/Admin/AdminNew.Master"  %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Hidistro.UI.Web.Admin.Default"  CodeBehind="Default.aspx.cs"  MasterPageFile="~/Admin/AdminNew.Master"  %>
 
 <%@ Import Namespace="Hidistro.Core"%>
 <%@ Register TagPrefix="Hi" Namespace="Hidistro.UI.Common.Controls" Assembly="Hidistro.UI.Common.Controls" %>
@@ -45,9 +43,6 @@
     <form runat="server" id="aspForm">
                 <div class="shopuser clearfix">
                     <div class="fl shopuser-img clearfix">
-                        <div class="img fl">
-                            <img src="/Admin/Shop/Public/images/80x80.png" runat="server" id="imgLogo">
-                        </div>
                         <h2 class="fl"><asp:Literal runat="server" ID="lbShopName" ></asp:Literal> </h2>
                     </div>
                     <div class="shop-link fr">

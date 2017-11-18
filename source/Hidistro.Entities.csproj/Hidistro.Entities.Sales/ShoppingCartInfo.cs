@@ -13,7 +13,7 @@ namespace Hidistro.Entities.Sales
 
 		private System.Collections.Generic.IList<ShoppingCartItemInfo> lineItems;
 
-        public MilkCardInfo MilkCard { get; set; }
+
 
         public int ReducedPromotionId
 		{

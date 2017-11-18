@@ -19,7 +19,7 @@ namespace Hidistro.UI.Common.Controls
 
 		private void RenderMetaGenerator(HtmlTextWriter writer)
 		{
-			writer.WriteLine("<meta name=\"GENERATOR\" content=\"云分销 3.5.1\" />");
+			writer.WriteLine("<meta name=\"GENERATOR\" content=\"袋鼠玩趣城\" />");
 		}
 
 		private void RenderFavicon(HtmlTextWriter writer)

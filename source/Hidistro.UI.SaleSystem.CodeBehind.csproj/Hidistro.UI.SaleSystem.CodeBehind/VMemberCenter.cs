@@ -95,8 +95,6 @@ namespace Hidistro.UI.SaleSystem.CodeBehind
 				DataTable memberCoupons = CouponHelper.GetMemberCoupons(memberCouponsSearch, ref num);
 				this.litCoupon = (System.Web.UI.WebControls.Literal)this.FindControl("litCoupon");
 				this.litCoupon.Text = num.ToString();
-                //将coupon改为奶券数量
-                this.litCoupon.Text = VShopHelper.GetMilkCardCount(currentMemberInfo.UserId).ToString();
 
 				this.litBindUser = (System.Web.UI.WebControls.Literal)this.FindControl("litBindUser");
 				this.litExpenditure = (System.Web.UI.WebControls.Literal)this.FindControl("litExpenditure");

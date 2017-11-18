@@ -62,11 +62,7 @@ namespace Hidistro.SqlDal.Orders
 					this.database.AddInParameter(sqlStringCommand, "DiscountAverage" + text, System.Data.DbType.Decimal, lineItemInfo.DiscountAverage);
 					this.database.AddInParameter(sqlStringCommand, "LimitedTimeDiscountId" + text, System.Data.DbType.Decimal, lineItemInfo.LimitedTimeDiscountId);
 					this.database.AddInParameter(sqlStringCommand, "CommissionDiscount" + text, System.Data.DbType.Int32, lineItemInfo.CommissionDiscount);
-                    //≈£ƒÃ≈‰ÀÕœ‡πÿ
-                    this.database.AddInParameter(sqlStringCommand, "SendStartDate" + text, System.Data.DbType.DateTime, lineItemInfo.SendStartDate);
-                    this.database.AddInParameter(sqlStringCommand, "SendEndDate" + text, System.Data.DbType.DateTime, lineItemInfo.SendEndDate);
-                    this.database.AddInParameter(sqlStringCommand, "QuantityPerDay" + text, System.Data.DbType.Int32, lineItemInfo.QuantityPerDay);
-                    this.database.AddInParameter(sqlStringCommand, "SendDays" + text, System.Data.DbType.Int32, lineItemInfo.SendDays);
+
                     num++;
 					if (num == 50)
 					{

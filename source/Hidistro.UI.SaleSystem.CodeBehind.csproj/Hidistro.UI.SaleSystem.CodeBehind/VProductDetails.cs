@@ -142,15 +142,7 @@ namespace Hidistro.UI.SaleSystem.CodeBehind
 					this.litCategoryId.Value = "0";
 				}
                 MemberInfo currentMember = MemberProcessor.GetCurrentMember();
-                //通过牛奶粉类获取延迟天数
-                CategoryInfo cinfo = CategoryBrowser.GetCategory(Convert.ToInt32(this.litCategoryId.Value));
-                this.hidDelayDays.Value = cinfo.DelayDays.ToString();
-                //当前配送站点名
-                DistributorsInfo currentSite = DistributorsBrower.GetDistributorInfo(currentMember.ReferralUserId);
-                if (currentSite != null)
-                {
-                    this.litSiteName.Text = "配送方："+currentSite.StoreName;
-                }
+
                 string productName = product.ProductName;
 				string text = ProductBrowser.GetProductTagName(this.productId);
 				if (!string.IsNullOrEmpty(text))

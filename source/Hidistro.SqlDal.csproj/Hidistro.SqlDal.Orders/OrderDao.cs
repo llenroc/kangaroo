@@ -1254,40 +1254,7 @@ namespace Hidistro.SqlDal.Orders
 			return result;
 		}
 
-        /// <summary>
-        /// 创建牛奶配送任务
-        /// </summary>
-        /// <param name="orderinfo"></param>
-        /// <param name="dbTran"></param>
-        /// <returns></returns>
-        public bool CreatMilkSendQuest(OrderInfo orderinfo)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            foreach (LineItemInfo lineItemInfo in orderinfo.LineItems.Values)
-            {
-                for(int i = 1; i <= lineItemInfo.SendDays; i++)
-                {
-                    stringBuilder.Append("insert into Site_QuestList (QuestId,SiteId,UserId,ProductId,OrderId,Status,QuantityPerDay,SendStartDate,SendEndDate,SendDays,FinishDays,LeftDays,QuestDate) ");
-                    stringBuilder.Append(string.Format("values (newid(),{0},{1},{10},'{2}',{3},{4},'{5}','{6}',{7},{8},{9},'{11}'); ", orderinfo.SiteId, orderinfo.UserId, orderinfo.OrderId, 0, lineItemInfo.QuantityPerDay, lineItemInfo.SendStartDate, lineItemInfo.SendEndDate, lineItemInfo.SendDays, i, lineItemInfo.SendDays-i,lineItemInfo.ProductId, lineItemInfo.SendStartDate.AddDays(i-1)));
-                }
-            }
-            DbCommand sqlStringCommand = this.database.GetSqlStringCommand(stringBuilder.ToString());
-            return (this.database.ExecuteNonQuery(sqlStringCommand) > 0);
-        }
-
-        //根据条件获取配送任务列表
-        public DataTable GetQuestList(string where)
-        {
-            string query = "select * from Site_QuestList ";
-            if (!string.IsNullOrEmpty(where))
-            {
-                query += where;
-            }
-            query += " order by QuestDate asc";
-            System.Data.Common.DbCommand sqlStringCommand = this.database.GetSqlStringCommand(query);
-            return this.database.ExecuteDataSet(sqlStringCommand).Tables[0];
-        }
-
+        
 
         public bool CreatOrder(OrderInfo orderInfo, System.Data.Common.DbTransaction dbTran)
 		{
@@ -1325,13 +1292,11 @@ namespace Hidistro.SqlDal.Orders
 			this.database.AddInParameter(storedProcCommand, "PayCharge", System.Data.DbType.Currency, orderInfo.PayCharge);
 			this.database.AddInParameter(storedProcCommand, "RefundStatus", System.Data.DbType.Int32, (int)orderInfo.RefundStatus);
 			this.database.AddInParameter(storedProcCommand, "Gateway", System.Data.DbType.String, orderInfo.Gateway);
-            //this.database.AddInParameter(storedProcCommand, "OrderTotal", System.Data.DbType.Currency, orderInfo.GetTotal());
-            this.database.AddInParameter(storedProcCommand, "OrderTotal", System.Data.DbType.Currency, orderInfo.GetMilkTotal());
+            this.database.AddInParameter(storedProcCommand, "OrderTotal", System.Data.DbType.Currency, orderInfo.GetTotal());
             this.database.AddInParameter(storedProcCommand, "OrderPoint", System.Data.DbType.Int32, orderInfo.Points);
 			this.database.AddInParameter(storedProcCommand, "OrderCostPrice", System.Data.DbType.Currency, orderInfo.GetCostPrice());
 			this.database.AddInParameter(storedProcCommand, "OrderProfit", System.Data.DbType.Currency, orderInfo.GetProfit());
-            //this.database.AddInParameter(storedProcCommand, "Amount", System.Data.DbType.Currency, orderInfo.GetAmount());
-            this.database.AddInParameter(storedProcCommand, "Amount", System.Data.DbType.Currency, orderInfo.GetMilkAmount()); //牛奶配送计算总价
+            this.database.AddInParameter(storedProcCommand, "Amount", System.Data.DbType.Currency, orderInfo.GetAmount());
             this.database.AddInParameter(storedProcCommand, "ReducedPromotionId", System.Data.DbType.Int32, orderInfo.ReducedPromotionId);
 			this.database.AddInParameter(storedProcCommand, "ReducedPromotionName", System.Data.DbType.String, orderInfo.ReducedPromotionName);
 			this.database.AddInParameter(storedProcCommand, "ReducedPromotionAmount", System.Data.DbType.Currency, orderInfo.ReducedPromotionAmount);
@@ -1352,7 +1317,6 @@ namespace Hidistro.SqlDal.Orders
 			this.database.AddInParameter(storedProcCommand, "RedPagerOrderAmountCanUse", System.Data.DbType.Currency, orderInfo.RedPagerOrderAmountCanUse);
 			this.database.AddInParameter(storedProcCommand, "RedPagerAmount", System.Data.DbType.Currency, orderInfo.RedPagerAmount);
             this.database.AddInParameter(storedProcCommand, "SiteId", System.Data.DbType.Int32, orderInfo.SiteId);
-            this.database.AddInParameter(storedProcCommand, "MilkCardId", System.Data.DbType.Guid, orderInfo.MilkCardId);
             if (orderInfo.GroupBuyId > 0)
 			{
 				this.database.AddInParameter(storedProcCommand, "GroupBuyId", System.Data.DbType.Int32, orderInfo.GroupBuyId);

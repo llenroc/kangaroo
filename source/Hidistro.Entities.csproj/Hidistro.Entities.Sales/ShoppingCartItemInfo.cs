@@ -155,16 +155,6 @@ namespace Hidistro.Entities.Sales
 				return this.AdjustedPrice * this.Quantity;
 			}
 		}
-        /// <summary>
-        /// Å£ÄÌÅäËÍ×Ü¼Û
-        /// </summary>
-        public decimal MilkSubTotal
-        {
-            get
-            {
-                return this.QuantityPerDay*this.SendDays * this.AdjustedPrice;
-            }
-        }
 
         public decimal SumSubTotal
 		{

@@ -25,11 +25,6 @@ namespace Hidistro.Entities.Orders
             set;
         }
 
-        public Guid MilkCardId
-        {
-            get;
-            set;
-        }
 
         public int BargainDetialId
 		{
@@ -665,9 +660,6 @@ namespace Hidistro.Entities.Orders
 
 		public decimal GetTotal()
 		{
-            if (GetMilkTotal() > 0)
-                return this.GetMilkTotalByOrder(true);
-            else
                 return this.GetTotalByOrder(true);
 		}
 
@@ -686,40 +678,13 @@ namespace Hidistro.Entities.Orders
 			return num;
 		}
 
-        public decimal GetMilkTotal()
-        {
-            return this.GetMilkTotalByOrder(true);
-        }
-
-        public decimal GetMilkTotalByOrder(bool isPositive)
-        {
-            //如果是奶卡下的订单,则为免费
-            if (this.MilkCardId != null && this.MilkCardId!=Guid.Empty)
-            {
-                return 0m;
-            }
-            decimal num = this.GetMilkAmount();
-            num -= this.GetTotalDiscountAverage();
-            num -= this.GetReturnAmount();
-            num -= this.GetAdjustCommssion();
-            num += this.AdjustedFreight;
-            num = decimal.Round(num, 2);
-            if (isPositive && num < 0m)
-            {
-                num = 0m;
-            }
-            return num;
-        }
+        
 
         public decimal GetCashPayMoney()
 		{
 			return this.GetTotal() - this.GetBalancePayMoneyTotal() - this.CouponFreightMoneyTotal;
 		}
 
-        public decimal GetMilkCashPayMoney()
-        {
-            return this.GetMilkTotal() - this.GetBalancePayMoneyTotal() - this.CouponFreightMoneyTotal;
-        }
 
         public decimal GetBalancePayMoneyTotal()
 		{
@@ -845,23 +810,6 @@ namespace Hidistro.Entities.Orders
 			return decimal.Round(num, 2);
 		}
 
-        public decimal GetMilkAmount()
-        {
-            //如果是奶卡下的订单,则为免费
-            if (this.MilkCardId != null && this.MilkCardId!= Guid.Empty)
-            {
-                return 0m;
-            }
-            decimal num = 0m;
-            foreach(LineItemInfo current in this.LineItems.Values)
-            {
-                if(current.Type == 0)
-                {
-                    num += current.MilkSubTotal();
-                }
-            }
-            return decimal.Round(num, 2);
-        }
 
 		public int GetProductTotalNum()
 		{

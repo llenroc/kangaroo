@@ -84,11 +84,7 @@ namespace Hidistro.SaleSystem.Vshop
 						lineItemInfo.Quantity = current.Quantity;
 						lineItemInfo.ShipmentQuantity = current.ShippQuantity;
 						lineItemInfo.CommissionDiscount = 100;
-                        //牛奶配送相关
-                        lineItemInfo.SendStartDate = current.SendStartDate;
-                        lineItemInfo.SendEndDate = current.SendEndDate;
-                        lineItemInfo.SendDays = current.SendDays;
-                        lineItemInfo.QuantityPerDay = current.QuantityPerDay;
+
 
 						if (current.LimitedTimeDiscountId > 0)
 						{
@@ -138,9 +134,8 @@ namespace Hidistro.SaleSystem.Vshop
 		public static int CreatOrder(OrderInfo orderInfo, bool isUseBalance, decimal remainingMondy)
 		{
 			int num = 0;
-            //if (orderInfo.GetTotal() <= 0m)
-            //牛奶配送相关
-            if (orderInfo.GetMilkTotal() <= 0m)
+
+            if (orderInfo.GetTotal() <= 0m)
             {
 				orderInfo.OrderStatus = OrderStatus.BuyerAlreadyPaid;
 				orderInfo.PayDate = new DateTime?(DateTime.Now);

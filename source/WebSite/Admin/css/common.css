@@ -69,7 +69,7 @@ img {width:auto\9;height:auto;vertical-align:middle;border:0;-ms-interpolation-m
 .ui-header {box-shadow:3px 3px 3px rgba(0,0,0,.2);background-color: #2B3643;}
 .ui-header-inner {width:1260px;position:relative;padding-right:120px;padding-left: 230px;margin:0 auto;}
 .ui-header-logo {position:absolute;top:0px;left:-10px;margin:0;padding-top:3px;width: 225px;height:54px;font-weight:normal;text-align:left;overflow:hidden;line-height:0;}
-.ui-header-logo>a {display:block;width:100%;height:50px;font-size:0px;text-decoration:none;vertical-align:middle;color:#fff;background: url(../images/login-title1.png) no-repeat;}
+.ui-header-logo>a {display:block;width:100%;height:50px;font-size:0px;text-decoration:none;vertical-align:middle;color:#fff;}
 .ui-header-logo .version {display:none;position:absolute;width:24px;height:16px;top:29px;left:94px;color:#fff;line-height:16px;text-align:center;background:#cacfd1;border-radius:2px}
 .ui-header-logo .version i {display:block;line-height:16px;font-size:12px;font-style:normal;-webkit-transform:scale(0.92, 0.92)}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {

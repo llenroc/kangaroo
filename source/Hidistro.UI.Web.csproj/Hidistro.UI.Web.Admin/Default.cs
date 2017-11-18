@@ -55,11 +55,15 @@ namespace Hidistro.UI.Web.Admin
                
                 SiteSettings masterSettings = SettingsManager.GetMasterSettings(false);
 				this.lbShopName.Text = masterSettings.SiteName;
-				this.imgLogo.Src = masterSettings.DistributorLogoPic;
-				if (!File.Exists(base.Server.MapPath(masterSettings.DistributorLogoPic)))
-				{
-					this.imgLogo.Src = "/Admin/Shop/Public/images/80x80.png";
-				}
+                if (this.imgLogo != null)
+                {
+                    this.imgLogo.Src = masterSettings.DistributorLogoPic;
+                    if (!File.Exists(base.Server.MapPath(masterSettings.DistributorLogoPic)))
+                    {
+                        this.imgLogo.Src = "/Admin/Shop/Public/images/80x80.png";
+                    }
+                }
+
 				int port = base.Request.Url.Port;
 				string text = (port == 80) ? "" : (":" + port.ToString());
 				this.showUrl = string.Concat(new string[]

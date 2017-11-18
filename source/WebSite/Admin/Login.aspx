@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./css/common.css?20160818" />
     <style type="text/css">
     	html,body{width: 100%;height: 100%;background-color: #F1F1F1; position: relative;}
-    	.dislogin{width: 340px;padding: 100px 20px 20px; position: absolute;left: 50%;margin-left: -170px; background:url(./images/login-title1.png) no-repeat 25px 35px #fff;box-shadow: 0 0 300px #fff;}
+    	.dislogin{width: 340px;padding: 100px 20px 20px; position: absolute;left: 50%;margin-left: -170px; box-shadow: 0 0 300px #fff;}
     	.dislogin .form-group{margin-bottom: 10px;position: relative;}
     	.dislogin .form-group label{position: absolute;left: 10px;top: 0;height: 40px;line-height: 40px;color: #B3B3B3;z-index: 10;}
     	.dislogin-input .form-control{height: 40px;padding: 6px 12px 6px 65px;}
@@ -56,7 +56,9 @@
     </script>
 </head>
 <body>
+
 	<div class="dislogin">
+    <img src="./images/login-title1.png"  style="height:90px;"/>
     <form id="aspnetForm" runat="server">
 			<div class="form-group">
                 <label class="control-label" for="username">用户名</label>

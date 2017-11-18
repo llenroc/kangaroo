@@ -175,7 +175,6 @@
     <Content Include="Admin\css\css.css" />
     <Content Include="Admin\css\kkpager_blue.css" />
     <Content Include="Admin\css\login.css" />
-    <Content Include="Admin\css\selectcategory.css" />
     <Content Include="Admin\css\style.css" />
     <Content Include="Admin\css\weibo.css" />
     <Content Include="Admin\Default.aspx" />
@@ -211,9 +210,7 @@
     <Content Include="Admin\Fenxiao\images\phonebg.jpg" />
     <Content Include="Admin\Fenxiao\images\right.png" />
     <Content Include="Admin\Fenxiao\MarketingDocuments.aspx" />
-    <Content Include="Admin\Fenxiao\MilkCardManage.aspx" />
     <Content Include="Admin\Fenxiao\ProductSelect.aspx" />
-    <Content Include="Admin\Fenxiao\QuestList.aspx" />
     <Content Include="Admin\Fenxiao\Scope.aspx" />
     <Content Include="Admin\Fenxiao\StoreCardSet.aspx" />
     <Content Include="Admin\Fenxiao\SubStoreCommissions.aspx" />
@@ -230,7 +227,6 @@
     <Content Include="Admin\Goods\ascx\SpecificationView.ascx" />
     <Content Include="Admin\Goods\attributes.helper.js" />
     <Content Include="Admin\Goods\BrandCategories.aspx" />
-    <Content Include="Admin\Goods\CategoryEdit.aspx" />
     <Content Include="Admin\Goods\DisplaceCategory.aspx" />
     <Content Include="Admin\Goods\EditAttribute.aspx" />
     <Content Include="Admin\Goods\EditAttributeValues.aspx" />
@@ -262,7 +258,6 @@
     <Content Include="Admin\Goods\ProductZero.aspx" />
     <Content Include="Admin\Goods\publish.helper.js" />
     <Content Include="Admin\Goods\ReplyProductConsultations.aspx" />
-    <Content Include="Admin\Goods\SelectCategory.aspx" />
     <Content Include="Admin\Goods\SkuValue.aspx" />
     <Content Include="Admin\help\about.html" />
     <Content Include="Admin\help\ie-css3.htc" />
@@ -2885,7 +2880,6 @@
     <Content Include="Templates\common\images\membership_1.jpg" />
     <Content Include="Templates\common\images\membership_2.jpg" />
     <Content Include="Templates\common\images\membership_3.jpg" />
-    <Content Include="Templates\common\images\milkcard.png" />
     <Content Include="Templates\common\images\myorder_1.jpg" />
     <Content Include="Templates\common\images\no-luck.png" />
     <Content Include="Templates\common\images\nologingetredpager.jpg" />
@@ -3125,7 +3119,6 @@
     <Content Include="Templates\common\skin-VModifyPassWord.html" />
     <Content Include="Templates\common\Skin-VMyBargains.html" />
     <Content Include="Templates\common\skin-vMyConsultations.html" />
-    <Content Include="Templates\common\skin-VMyMilkCardList.html" />
     <Content Include="Templates\common\skin-VMyCouponLists.html" />
     <Content Include="Templates\common\skin-vMyFavorites.html" />
     <Content Include="Templates\common\skin-VMyIntegralDetail.html" />
@@ -3145,7 +3138,6 @@
     <Content Include="Templates\common\Skin-VOneTaoPaySuccess.html" />
     <Content Include="Templates\common\Skin-VOneTaoPayView.html" />
     <Content Include="Templates\common\Skin-VOneyuanTaoResult.html" />
-    <Content Include="Templates\common\skin-vOrderbycycle.html" />
     <Content Include="Templates\common\skin-vproductConsultations.html" />
     <Content Include="Templates\common\skin-vproductdetails - 复制.html" />
     <Content Include="Templates\common\skin-vproductdetails.html" />
@@ -3155,7 +3147,6 @@
     <Content Include="Templates\common\skin-vProgressCheck.html" />
     <Content Include="Templates\common\skin-vProgressDetail.html" />
     <Content Include="Templates\common\skin-vQRcode.html" />
-    <Content Include="Templates\common\skin-vQuestList.html" />
     <Content Include="Templates\common\skin-VReGetWeiXinUserInfos.html" />
     <Content Include="Templates\common\skin-vRegister.html" />
     <Content Include="Templates\common\skin-vRequestReturn.html" />
@@ -3238,7 +3229,6 @@
     <Content Include="Templates\common\tags\skin-Common_MemberOrderReturnGoods.ascx" />
     <Content Include="Templates\common\tags\Skin-Common_MyBaseHeader.html" />
     <Content Include="Templates\common\tags\skin-Common_MyConsultations.ascx" />
-    <Content Include="Templates\common\tags\skin-Common_MyMilkCardRepeat.ascx" />
     <Content Include="Templates\common\tags\skin-Common_MyCouponRepeat.ascx" />
     <Content Include="Templates\common\tags\skin-Common_MyFavorites.ascx" />
     <Content Include="Templates\common\tags\skin-Common_MyIntegarlDetail.ascx" />
@@ -3671,8 +3661,6 @@
     <Content Include="Utility\WeixinApi.js" />
     <Content Include="Utility\Window.js" />
     <Content Include="VerifyCodeImage.aspx" />
-    <Content Include="Vshop\MyMilkCardList.aspx" />
-    <Content Include="Vshop\Orderbycycle.aspx" />
     <Content Include="Vshop\Activity.aspx" />
     <Content Include="Vshop\ActivityDetail.aspx" />
     <Content Include="Vshop\AddShippingAddress.aspx" />
@@ -3748,7 +3736,6 @@
     <Content Include="Vshop\ProductListAll.aspx" />
     <Content Include="Vshop\ProductReview.aspx" />
     <Content Include="Vshop\QRcode.aspx" />
-    <Content Include="Vshop\QuestList.aspx" />
     <Content Include="Vshop\RequestCommissions.aspx" />
     <Content Include="Vshop\RequestDistributorFinish.aspx" />
     <Content Include="Vshop\RequestReturn.aspx" />

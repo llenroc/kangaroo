@@ -257,22 +257,12 @@ namespace Hidistro.UI.SaleSystem.CodeBehind
 				{
 					if (current2.Type == 0)
 					{
-						num4 += current2.MilkSubTotal; //牛奶配送总价
+                        num4 += current2.SubTotal;
 						num5 += current2.Quantity;
 					}
 				}
 				d2 = num4;
-                //如果选择了奶卡,并且奶卡属于当前用户,则订单总价为0
-                string cardidstr = this.Page.Request.QueryString["cardid"];
-                Guid cardid = new Guid();
-                if(Guid.TryParse(cardidstr, out cardid))
-                {
-                    MilkCardInfo milkCard = VShopHelper.GetMilkCard(cardid);
-                    if (milkCard != null)
-                    {
-                        d2 = 0m;
-                    }
-                }
+                
 
 				if (!this.isbargain)
 				{
@@ -547,7 +537,7 @@ namespace Hidistro.UI.SaleSystem.CodeBehind
 							num = this.buyAmount;
 							num2 = 0;
 						}
-						list = ShoppingCartProcessor.GetListShoppingCart(SendStartDate,QuantityPerDay,SendDays, this.productSku, num, 0, num2);
+						list = ShoppingCartProcessor.GetListShoppingCart( this.productSku, num, 0, num2);
 					}
 				}
 				else

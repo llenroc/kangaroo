@@ -299,67 +299,9 @@ namespace Hidistro.UI.Web.API
 			case "GetSiteRegions":
 				this.GetSiteRegions(context);
 				break;
-            case "CheckMilkCard":
-                this.CheckMilkCard(context);
-                break;
                     return;
 			}
 		}
-
-        private void CheckMilkCard(HttpContext context)
-        {
-            context.Response.ContentType = "application/json";
-            MemberInfo currentMember = MemberProcessor.GetCurrentMember();
-
-            string cardnum = context.Request["cardNum"];
-            string cardpwd = context.Request["cardPwd"];
-
-            if (string.IsNullOrEmpty(cardnum) || string.IsNullOrEmpty(cardpwd))
-            {
-                string s = "{\"success\":-1, \"msg\":\"卡号密码不全！\"}";
-                context.Response.Write(s);
-                return;
-            }
-            try
-            {
-                string s = "";
-                MilkCardInfo mcinfo = VShopHelper.GetMilkCard(cardnum, cardpwd);
-                if (mcinfo == null)
-                {
-                    s = "{\"success\":-1, \"msg\":\"该卡不存在！\"}";
-                    context.Response.Write(s);
-                    return;
-                }
-                if(mcinfo.Status == 1)
-                {
-                    s = "{\"success\":-1, \"msg\":\"该卡已经使用过！\"}";
-                    context.Response.Write(s);
-                    return;
-                }
-
-                if(mcinfo.Status == 0 && Globals.ToNum(mcinfo.UserId) != 0)
-                {
-                    s = "{\"success\":-1, \"msg\":\"该卡已经被发放！\"}";
-                    context.Response.Write(s);
-                    return;
-                }
-
-                if (mcinfo.Status == 0 && Globals.ToNum(mcinfo.UserId) == 0)
-                {
-                    s = "{\"success\":1, \"cardid\":\""+mcinfo.ID+"\",\"productsku\":\""+mcinfo.ProductId+"_0\",\"quantityPerDay\":\""+mcinfo.FreeQuantityPerDay+"\",\"startDate\":\""+mcinfo.startSendDate+"\",\"sendDays\":\""+mcinfo.FreeSendDays+"\"}";
-                    context.Response.Write(s);
-                    return;
-                }
-            }
-            catch(Exception ex)
-            {
-                string s = "{\"success\":-1, \"msg\":\"卡号和密码核对失败！\"}";
-                context.Response.Write(s);
-                context.Response.End();
-                return;
-            }
-            
-        }
 
         private void GetSiteRegions(HttpContext context)
         {
@@ -3577,10 +3519,6 @@ namespace Hidistro.UI.Web.API
 				orderInfo.QQ = currentMember.QQ;
 				orderInfo.Remark = remark;
                 orderInfo.SiteId = currentMember.ReferralUserId;
-                //奶卡相关
-                if (cart.MilkCard != null)
-                    orderInfo.MilkCardId = cart.MilkCard.ID;
-
 
                 string text = "";
 				string text2 = "";
@@ -3881,13 +3819,8 @@ namespace Hidistro.UI.Web.API
 				orderInfo.PointExchange = 0;
 
 
-                //decimal amount = orderInfo.GetAmount();
-                decimal amount = orderInfo.GetMilkAmount();
-                //如果奶卡是自己的,才可享受免费
-                if (orderInfo.MilkCardId != null &&  orderInfo.MilkCardId!= Guid.Empty && cart.MilkCard !=null && orderInfo.UserId == cart.MilkCard.UserId)
-                {
-                    amount = 0m;
-                }
+                decimal amount = orderInfo.GetAmount();
+
                 if (orderInfo.RedPagerAmount < 0m)
 				{
 					stringBuilder.Append("\"Status\":\"Error\"");
@@ -3984,19 +3917,7 @@ namespace Hidistro.UI.Web.API
 						{
 							ShoppingCartProcessor.ClearShoppingCart();
 						}
-                        //奶卡后续操作
-                        if(orderInfo.MilkCardId != null && orderInfo.MilkCardId!=Guid.Empty)
-                        {
-                            //核销奶卡
-                            MilkCardInfo mcinfo = VShopHelper.GetMilkCard(orderInfo.MilkCardId);
-                            mcinfo.Status = 1; //已使用
-                            mcinfo.OrderDate = orderInfo.OrderDate;
-                            mcinfo.OrderId = orderInfo.OrderId;
-                            mcinfo.UserId = orderInfo.UserId;
-                            VShopHelper.UpdateMilkCard(mcinfo);
-                            //生成牛奶配送任务
-                            OrderHelper.CreatMilkSendQuest(orderInfo);
-                        }   
+
                         try
                         {
 							OrderInfo orderInfo2 = orderInfo;
@@ -4085,23 +4006,7 @@ namespace Hidistro.UI.Web.API
 			string text4 = this.GenerateOrderId();
 			int num4;
 
-            //牛奶配送相关参数获取
-            DateTime sendStartDate = new DateTime() ;
-            int quantityPerDay=0;
-            int sendDays=0;
-
-            if (!string.IsNullOrEmpty(context.Request["sendStartDate"]))
-            {
-                sendStartDate = Convert.ToDateTime(context.Request["sendStartDate"]);
-            }
-            if (!string.IsNullOrEmpty(context.Request["quantityPerDay"]))
-            {
-                quantityPerDay = Convert.ToInt32(context.Request["quantityPerDay"]);
-            }
-            if (!string.IsNullOrEmpty(context.Request["sendDays"]))
-            {
-                sendDays = Convert.ToInt32(context.Request["sendDays"]);
-            }
+            
 
             if (int.TryParse(context.Request["buyAmount"], out num4) && !string.IsNullOrEmpty(context.Request["productSku"]) && !string.IsNullOrEmpty(context.Request["from"]) && (context.Request["from"] == "signBuy" || context.Request["from"] == "groupBuy"))
 			{
@@ -4152,7 +4057,7 @@ namespace Hidistro.UI.Web.API
 							num6 = num4;
 						}
 					}
-					list = ShoppingCartProcessor.GetListShoppingCart(sendStartDate,quantityPerDay,sendDays, text5, num6, 0, num5);
+					list = ShoppingCartProcessor.GetListShoppingCart( text5, num6, 0, num5);
 				}
 				if (list == null)
 				{
@@ -4160,20 +4065,6 @@ namespace Hidistro.UI.Web.API
 					goto IL_550;
 				}
 
-                //如果有奶卡,写入奶卡信息
-                string cardidstr = context.Request["cardid"];
-                Guid cardid = new Guid();
-                if (Guid.TryParse(cardidstr, out cardid))
-                {
-                    MilkCardInfo milkCard = VShopHelper.GetMilkCard(cardid);
-                    if (milkCard != null)
-                    {
-                        foreach (ShoppingCartInfo current11 in list)
-                        {
-                            current11.MilkCard = milkCard;
-                        }
-                    }
-                }
                 using (System.Collections.Generic.List<ShoppingCartInfo>.Enumerator enumerator = list.GetEnumerator())
 				{
 					while (enumerator.MoveNext())

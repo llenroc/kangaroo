@@ -243,45 +243,6 @@ namespace Hidistro.Entities.Orders
 			return this.ItemAdjustedPrice * this.Quantity;
 		}
 
-        /// <summary>
-        /// 牛奶配送总价
-        /// </summary>
-        public decimal MilkSubTotal()
-        {
-                return this.QuantityPerDay * this.SendDays * this.ItemAdjustedPrice;
-        }
-
-        /// <summary>
-        /// 配送开始日期
-        /// </summary>
-        public DateTime SendStartDate
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 配送结束日期
-        /// </summary>
-        public DateTime SendEndDate
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 每天配送件数
-        /// </summary>
-        public int QuantityPerDay
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 配送天数
-        /// </summary>
-        public int SendDays
-        {
-            get;
-            set;
-        }
+        
     }
 }

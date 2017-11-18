@@ -381,11 +381,7 @@ namespace Hidistro.SqlDal.Sales
                     shoppingCartItemInfo.SkuId = skuId;
                     ShoppingCartItemInfo arg_E7_0 = shoppingCartItemInfo;
                     shoppingCartItemInfo.ShippQuantity = quantity;
-                    //牛奶配送所需属性
-                    shoppingCartItemInfo.SendStartDate = startSendDate;
-                    shoppingCartItemInfo.SendEndDate = startSendDate.AddDays(sendDays-1);
-                    shoppingCartItemInfo.QuantityPerDay = quantityPerDay;
-                    shoppingCartItemInfo.SendDays = sendDays;
+
                     arg_E7_0.Quantity = quantity;
                     shoppingCartItemInfo.MainCategoryPath = dataReader["MainCategoryPath"].ToString();
                     shoppingCartItemInfo.ProductId = (int)dataReader["ProductId"];

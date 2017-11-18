@@ -59,9 +59,7 @@ namespace Hidistro.UI.SaleSystem.CodeBehind
 			bool flag = true;
 			foreach (OrderInfo current in orderMarkingOrderInfo)
 			{
-                //牛奶配送计算总价
-                d += current.GetMilkTotal();
-				//d += current.GetTotal();
+				d += current.GetTotal();
 				num += current.GetBalancePayMoneyTotal();
 				foreach (LineItemInfo current2 in current.LineItems.Values)
 				{

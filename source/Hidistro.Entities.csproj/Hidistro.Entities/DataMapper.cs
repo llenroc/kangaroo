@@ -861,10 +861,7 @@ namespace Hidistro.Entities
                 {
                     orderInfo.SiteId = (int)reader["SiteId"];
                 }
-                if (System.DBNull.Value != reader["MilkCardId"])
-                {
-                    orderInfo.MilkCardId = (Guid)reader["MilkCardId"];
-                }
+
                 orderInfo.BargainDetialId = (int)reader["BargainDetialId"];
 				orderInfo.BalancePayMoneyTotal = (decimal)reader["BalancePayMoneyTotal"];
 				orderInfo.BalancePayFreightMoneyTotal = (decimal)reader["BalancePayFreightMoneyTotal"];
@@ -948,23 +945,6 @@ namespace Hidistro.Entities
 				{
 					lineItemInfo.IsAdminModify = (bool)reader["IsAdminModify"];
 				}
-                //≈£ƒÃ≈‰ÀÕœ‡πÿ
-                if (System.DBNull.Value != reader["SendStartDate"])
-                {
-                    lineItemInfo.SendStartDate = (DateTime)reader["SendStartDate"];
-                }
-                if (System.DBNull.Value != reader["SendEndDate"])
-                {
-                    lineItemInfo.SendEndDate = (DateTime)reader["SendEndDate"];
-                }
-                if (System.DBNull.Value != reader["QuantityPerDay"])
-                {
-                    lineItemInfo.QuantityPerDay = (int)reader["QuantityPerDay"];
-                }
-                if (System.DBNull.Value != reader["SendDays"])
-                {
-                    lineItemInfo.SendDays = (int)reader["SendDays"];
-                }
 
                 lineItemInfo.LimitedTimeDiscountId = (int)reader["LimitedTimeDiscountId"];
 				lineItemInfo.BalancePayMoney = (decimal)reader["BalancePayMoney"];

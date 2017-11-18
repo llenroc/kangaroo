@@ -67,9 +67,7 @@ namespace Hidistro.UI.Web.Pay
 						}
 					}
 				}
-                //支付金额等于牛奶配送金额
-                d += current.GetMilkCashPayMoney();
-				//d += current.GetCashPayMoney();
+				d += current.GetCashPayMoney();
 			}
 			PackageInfo packageInfo = new PackageInfo();
 			packageInfo.Body = text;

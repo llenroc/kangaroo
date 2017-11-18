@@ -177,9 +177,6 @@
     <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\DistributorUpdateSet.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\EditMilkCard.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\EditDistributorGrade.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -190,12 +187,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\ProductSelect.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\MilkCardManage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\QuestList.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Fenxiao\StoreCardSet.cs">
@@ -229,9 +220,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Goods\BrandCategories.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Hidistro.UI.Web.Admin.Goods\CategoryEdit.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.goods\DisplaceCategory.cs">
@@ -311,9 +299,6 @@
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Goods\ReplyProductConsultation.cs" />
     <Compile Include="Hidistro.UI.Web.Admin.Goods\ReplyProductConsultations.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Hidistro.UI.Web.Admin.Goods\SelectCategory.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Goods\SkuValue.cs">
@@ -662,9 +647,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Settings\AddExpressTemplate.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Hidistro.UI.Web.Admin.Settings\SendMilkCards.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.Settings\AddSiteManager.cs">

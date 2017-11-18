@@ -915,22 +915,6 @@ namespace Hidistro.Core
 			return result;
 		}
 
-        public static string GetGenerateMilkCardNum()
-        {
-            string result;
-            lock (Globals.Orderidlock)
-            {
-                string text ="MC"+ DateTime.Now.ToString("yyMMddHHmmssfff");
-                if (text == Globals.provCardNum)
-                {
-                    Thread.Sleep(1);
-                    text = "MC"+ DateTime.Now.ToString("yyMMddHHmmssfff");
-                }
-                Globals.provCardNum = text;
-                result = text;
-            }
-            return result;
-        }
 
         public static int GetCurrentMemberUserId(bool clearNoAccessLogin = false)
 		{

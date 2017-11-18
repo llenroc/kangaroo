@@ -449,21 +449,12 @@ namespace Hidistro.ControlPanel.Sales
             return new OrderDao().SetOrderExpressComputerpe(purchaseOrderIds, expressCompanyName, expressCompanyAbb);
         }
 
-        public static DataTable GetQuestList(string where)
-        {
-            return new OrderDao().GetQuestList(where);
-        }
 
-        public static bool CreatMilkSendQuest(OrderInfo info)
-        {
-            return new OrderDao().CreatMilkSendQuest(info);
-        }
 
         public static bool ConfirmPay(OrderInfo order)
         {
             ManagerHelper.CheckPrivilege(Privilege.CofimOrderPay);
             bool flag = false;
-            bool milkQuestFlag = false;
             if (order.CheckAction(OrderActions.SELLER_CONFIRM_PAY))
             {
                 OrderDao orderDao = new OrderDao();
@@ -487,11 +478,9 @@ namespace Hidistro.ControlPanel.Sales
                 order.Gateway = "hishop.plugins.payment.offlinerequest";
                 //更新订单状态
                 flag = orderDao.UpdateOrder(order, null);
-                //生成牛奶配送任务
-                milkQuestFlag = CreatMilkSendQuest(order);
 
                 string text = "";
-                if (flag && milkQuestFlag)
+                if (flag)
                 {
                     orderDao.UpdatePayOrderStock(order);
                     foreach (LineItemInfo current in order.LineItems.Values)

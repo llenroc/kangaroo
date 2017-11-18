@@ -76,8 +76,6 @@
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VBeginVote.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VBindUserMessage.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VBrandDetail.cs" />
-    <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VMyMilkCardList.cs" />
-    <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VOrderbycycle.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VBrandList.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VCategoryList.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VChirldrenDistributorDetials.cs" />
@@ -163,7 +161,6 @@
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VProgressCheck.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VProgressDetail.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VQRcode.cs" />
-    <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VQuestList.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VRegister.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VRequestCommissions.cs" />
     <Compile Include="Hidistro.UI.SaleSystem.CodeBehind\VRequestDistributorFinish.cs" />

@@ -63,8 +63,6 @@
     <Compile Include="Hidistro.Entities.Commodities\TaobaoProductInfo.cs" />
     <Compile Include="Hidistro.Entities.FenXiao\CustomDistributorStatistic.cs" />
     <Compile Include="Hidistro.Entities.FenXiao\DistributorGradeCommissionQuery.cs" />
-    <Compile Include="Hidistro.Entities.FenXiao\MilkCardInfo.cs" />
-    <Compile Include="Hidistro.Entities.FenXiao\MilkCardQuery.cs" />
     <Compile Include="Hidistro.Entities.FenXiao\StreetInfoQuery.cs" />
     <Compile Include="Hidistro.Entities.Members\ClientStatus.cs" />
     <Compile Include="Hidistro.Entities.Members\CommissionsQuery.cs" />
