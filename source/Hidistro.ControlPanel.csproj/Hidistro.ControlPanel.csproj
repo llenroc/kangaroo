@@ -34,7 +34,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System" />
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
-      <HintPath>.\Hidistro.ControlPanelReferences\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <HintPath>..\WebSite\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -43,7 +43,7 @@
       <HintPath>.\Hidistro.ControlPanelReferences\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <HintPath>.\Hidistro.ControlPanelReferences\System.Net.Http.dll</HintPath>
+      <HintPath>..\WebSite\bin\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
       <HintPath>.\Hidistro.ControlPanelReferences\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
@@ -51,6 +51,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hidistro.ControlPanel\Kangaroo\CardInfoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>false</AutoGen>
       <DesignTimeSharedInput>false</DesignTimeSharedInput>

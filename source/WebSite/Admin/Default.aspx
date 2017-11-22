@@ -100,10 +100,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="shop-chart">
+<%--                <div class="shop-chart">
                     <h3>平台经营趋势</h3>
                     <div class="echarts-map" id="main"></div>
-                </div>
+                </div>--%>
                 <div class="shopdatatable clearfix">
                     <div class="shopdatatable-left fl">
                         <table class="table table-hover">

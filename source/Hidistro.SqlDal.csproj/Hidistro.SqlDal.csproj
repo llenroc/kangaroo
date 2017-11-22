@@ -54,6 +54,7 @@
     <Compile Include="Hidistro.SqlDal.Commodities\TagDao.cs" />
     <Compile Include="Hidistro.SqlDal.Commodities\TaobaoProductDao.cs" />
     <Compile Include="Hidistro.SqlDal.FengXiao\DistributorGradeCommissionDao.cs" />
+    <Compile Include="Hidistro.SqlDal.Kangaroo\CardInfoManager.cs" />
     <Compile Include="Hidistro.SqlDal.Members\AmountDao.cs" />
     <Compile Include="Hidistro.SqlDal.Members\CustomGroupingDao.cs" />
     <Compile Include="Hidistro.SqlDal.Members\CustomGroupingUserDao.cs" />

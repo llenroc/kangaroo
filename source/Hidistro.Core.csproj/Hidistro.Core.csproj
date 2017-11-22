@@ -74,7 +74,9 @@
     <Compile Include="Hidistro.Core.Urls\UrlReWriteProvider.cs" />
     <Compile Include="Hidistro.Core\CopyrightLicenser.cs" />
     <Compile Include="Hidistro.Core\CustomerServiceManager.cs" />
+    <Compile Include="Hidistro.Core\DataAccessFactory.cs" />
     <Compile Include="Hidistro.Core\DataHelper.cs" />
+    <Compile Include="Hidistro.Core\DataProvider.cs" />
     <Compile Include="Hidistro.Core\DataProviders.cs" />
     <Compile Include="Hidistro.Core\DesSecurity.cs" />
     <Compile Include="Hidistro.Core\Express.cs" />
@@ -85,11 +87,15 @@
     <Compile Include="Hidistro.Core\HtmlCodingAttribute.cs" />
     <Compile Include="Hidistro.Core\LicenseChecker.cs" />
     <Compile Include="Hidistro.Core\LicenseHelper.cs" />
+    <Compile Include="Hidistro.Core\OleDbDataProvider.cs" />
+    <Compile Include="Hidistro.Core\OleDbHelper.cs" />
     <Compile Include="Hidistro.Core\ProductShowOrderPriority.cs" />
     <Compile Include="Hidistro.Core\ProductTempSQLADD.cs" />
     <Compile Include="Hidistro.Core\ResourcesHelper.cs" />
     <Compile Include="Hidistro.Core\Serializer.cs" />
     <Compile Include="Hidistro.Core\SettingsManager.cs" />
+    <Compile Include="Hidistro.Core\SqlHelper.cs" />
+    <Compile Include="Hidistro.Core\SqlProvider.cs" />
     <Compile Include="Hidistro.Core\TemplatePageControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

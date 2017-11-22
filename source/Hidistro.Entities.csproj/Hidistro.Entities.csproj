@@ -32,6 +32,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hidistro.Entites.Kangaroo\CardInfoEntity.cs" />
     <Compile Include="Hidistro.Entities.Bargain\BargainDetialInfo.cs" />
     <Compile Include="Hidistro.Entities.Bargain\BargainInfo.cs" />
     <Compile Include="Hidistro.Entities.Bargain\BargainQuery.cs" />
@@ -315,5 +316,6 @@
       <Name>Hishop.Components.Validation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

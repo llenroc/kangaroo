@@ -55,10 +55,10 @@
                             <label for="sellshop1" class="ml10">手机号码：</label>
                             <asp:TextBox ID="txtPhone" CssClass="form-control resetSize" Width="186px" runat="server" />
                         </div>
-                        <div class="form-group mr20" style ="margin-left :30px;">
+<%--                        <div class="form-group mr20" style ="margin-left :30px;">
                             <label for="txtStoreName">所属上级：</label>
                             <asp:TextBox ID="txtStoreName" CssClass="form-control resetSize" placeholder="输入店铺名称"  runat="server" />
-                        </div>
+                        </div>--%>
                     </div>
                     <div class="form-inline ">
                         <div class="form-group">

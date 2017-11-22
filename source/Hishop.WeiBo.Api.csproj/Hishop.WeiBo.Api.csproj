@@ -32,7 +32,7 @@
       <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <HintPath>..\Hidistro.ControlPanel.csproj\Hidistro.ControlPanelReferences\System.Net.Http.dll</HintPath>
+      <HintPath>..\WebSite\bin\System.Net.Http.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

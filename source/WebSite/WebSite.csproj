@@ -627,7 +627,6 @@
     <Content Include="Admin\Member\CustomDistributorEdit.aspx" />
     <Content Include="Admin\Member\CustomDistributorList.aspx" />
     <Content Include="Admin\Member\EditMember.aspx" />
-    <Content Include="Admin\Member\ManageMembers - 复制.aspx" />
     <Content Include="Admin\Member\ManageMembers.aspx" />
     <Content Include="Admin\Member\MemberAmountApply.aspx" />
     <Content Include="Admin\Member\MemberAmountList.aspx" />

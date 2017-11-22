@@ -95,7 +95,7 @@ namespace Hidistro.UI.Web.Admin
 				this.GoodsQty = base.GetFieldValue(drOne, "GoodsQty");
 				this.MemberQty = base.GetFieldValue(drOne, "MemberQty");
 				this.DistributorQty = base.GetFieldValue(drOne, "DistributorQty");
-				this.LoadTradeDataList(beginDate, 7);
+				//this.LoadTradeDataList(beginDate, 7);
 				this.rptDistributor.DataSource = ShopStatisticHelper.ShopGlobal_GetSortList_Distributor(beginDate, 8);
 				this.rptDistributor.DataBind();
 				this.rptMember.DataSource = ShopStatisticHelper.ShopGlobal_GetSortList_Member(beginDate, 8);
@@ -113,6 +113,11 @@ namespace Hidistro.UI.Web.Admin
 			writer.Write(text);
 		}
 
+        /// <summary>
+        /// 平台经营趋势
+        /// </summary>
+        /// <param name="BeginDate"></param>
+        /// <param name="Days"></param>
 		private void LoadTradeDataList(DateTime BeginDate, int Days)
 		{
 			DataTable dataTable = ShopStatisticHelper.ShopGlobal_GetTrendDataList(BeginDate, Days);

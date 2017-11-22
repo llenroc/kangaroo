@@ -5,7 +5,7 @@
       <PageLink ID="dpp01"  Title="平台概况" Link="Default.aspx"/>
       <!--<PageLink ID="dpp12"  Title="店铺设置" Link="shop/Setting.aspx"/>-->
     </Item>
-    <Item ID="dpi02" Title="店铺管理" Class="glyphicon ico-dianp">
+    <!--<Item ID="dpi02" Title="店铺管理" Class="glyphicon ico-dianp">-->
       <!--<PageLink ID="dpp02"  Title="店铺信息" Link="shop/Config.aspx"/>-->
      
       <!--<PageLink ID="dpp03"  Title="店铺主页" Link="shop/ShopIndex.aspx"/>-->
@@ -13,9 +13,9 @@
       <PageLink ID="dpp04" Title="平台导航" Link="shop/ShopMenu.aspx"/>
       <!--<PageLink ID="dpp05" Title="在线客服" Link="shop/saleservice.aspx"/>-->
       <PageLink ID="dpp11" Title="消息公告" Link="shop/NoticeList.aspx"/>
-    </Item>
+    <!--</Item>-->
     <Item ID="dpi03">
-      <PageLink ID="dpp06"  Title="素材管理" Link="shop/Articles.aspx"/>
+      <!--<PageLink ID="dpp06"  Title="素材管理" Link="shop/Articles.aspx"/>-->
       <!--<PageLink ID="dpp10"  Title="九图一文" Link="shop/ManageNineImages.aspx"/>-->
     </Item>
     <Item ID="dpi04" Title="图库管理" Class="glyphicon ico-tupian">
@@ -23,7 +23,7 @@
       <PageLink ID="dpp09"  Title="图片分组" Link="shop/imagetype.aspx"/>
     </Item>
   </Module>
-  <Module Title="商品" ID="m02" IsDivide="true" Link="goods/productonsales.aspx?firstPage=1">
+  <!--<Module Title="商品" ID="m02" IsDivide="true" Link="goods/productonsales.aspx?firstPage=1">
     <Item ID="spi01">
       <PageLink ID="spp01"  Title="上架新商品" Link="goods/selectcategory.aspx" Class="ui-btn ui-btn-success" Style="padding-left:0px;"/>
     </Item>
@@ -32,12 +32,12 @@
       <PageLink ID="spp03"  Title="仓库中的商品" Link="goods/productonstock.aspx"/>
       <PageLink ID="spp10"  Title="已售罄的商品" Link="goods/productzero.aspx"/>      
       <PageLink ID="spp11"  Title="商品回收站" Link="goods/productondeleted.aspx"/>
-      <!--<PageLink ID="spp04"  Title="数据包导入" Link="goods/importfromtb.aspx"/>
-      <PageLink ID="spp05"  Title="批量导出" Link="goods/exporttotb.aspx"/>-->
+      --><!--<PageLink ID="spp04"  Title="数据包导入" Link="goods/importfromtb.aspx"/>
+      <PageLink ID="spp05"  Title="批量导出" Link="goods/exporttotb.aspx"/>--><!--
     </Item>
     <Item ID="spi03" Title="分组管理" Class="glyphicon ico-fenlei">
       <PageLink ID="spp06"  Title="牛奶分类" Link="goods/managecategories.aspx"/>
-      <!--<PageLink ID="spp07"  Title="类型管理" Link="goods/producttypes.aspx"/>-->
+      --><!--<PageLink ID="spp07"  Title="类型管理" Link="goods/producttypes.aspx"/>--><!--
       <PageLink ID="spp14"  Title="标签管理" Link="goods/producttags.aspx"/>
       <PageLink ID="spp08"  Title="品牌管理" Link="goods/brandcategories.aspx"/>
     </Item>
@@ -45,27 +45,27 @@
       <PageLink ID="spp09" Link="goods/productconsultations.aspx" Title="客户咨询"/>
       <PageLink ID="spp13"  Title="客户评论" Link="goods/ProductReviews.aspx"/>
     </Item>
-  </Module>
-  <Module Title="订单" ID="m03" IsDivide="true" Link="trade/manageorder.aspx?firstPage=1">
+  </Module>-->
+  <!--<Module Title="订单" ID="m03" IsDivide="true" Link="trade/manageorder.aspx?firstPage=1">
     <Item ID="ddi01">
       <PageLink ID="ddp01"  Title="订单设置" Link="trade/setorderoption.aspx"/>
     </Item>
     <Item ID="ddi02" Title="订单管理" Class="glyphicon ico-dingdan">
       <PageLink ID="ddp03"  Title="所有订单" Link="trade/manageorder.aspx"/>
       <PageLink ID="ddp14"  Title="等待付款"  Link="trade/WaitBuyerPay.aspx"/>
-      <!--<PageLink ID="ddp04"  Title="等待发货"  Link="trade/BuyerAlreadyPaid.aspx"/>
-      <PageLink ID="ddp05"  Title="已发货"  Link="trade/SellerAlreadySent.aspx"/>-->
+      --><!--<PageLink ID="ddp04"  Title="等待发货"  Link="trade/BuyerAlreadyPaid.aspx"/>
+      <PageLink ID="ddp05"  Title="已发货"  Link="trade/SellerAlreadySent.aspx"/>--><!--
       <PageLink ID="ddp06"  Title="已付款"  Link="trade/Finished.aspx"/>
       <PageLink ID="ddp07"  Title="交易关闭"  Link="trade/Closed.aspx"/>
       <PageLink ID="ddp08"  Title="订单回收站"  Link="trade/RecycleStation.aspx"/>
     </Item>
-    <!--<Item ID="ddi04">
+    --><!--<Item ID="ddi04">
       <PageLink ID="ddp11"  Title="快递单模板" Link="trade/expresstemplates.aspx"/>
-    </Item>-->
-    <!--<Item ID="ddi05" Title="售后服务" Class="glyphicon ico-shouhou">
+    </Item>--><!--
+    --><!--<Item ID="ddi05" Title="售后服务" Class="glyphicon ico-shouhou">
       <PageLink ID="ddp12"  Title="售后订单" Link="trade/returnsapply.aspx"/>
-    </Item>-->
-  </Module>
+    </Item>--><!--
+  </Module>-->
   <Module Title="会员" IsDivide="true" ID="m04" Link="member/MemberGaiKuang.aspx?firstPage=1">
     <Item ID="hyi01">
       <PageLink ID="hyp01" Title="会员概况" Link="member/MemberGaiKuang.aspx"/>
@@ -89,32 +89,37 @@
       <PageLink ID="hyp09"  Title="购买短信套餐" Target="_blank" Link="http://sms.kuaidiantong.cn/SMSPackList.aspx"/>
     </Item>-->
   </Module>
-  <Module Title="服务站点" ID="m05"  IsDivide="true"  Link="Fenxiao/distributorlist.aspx?firstPage=1">
-    <!-- <Item ID="fxi01">
+  <Module Title="卡片" IsDivide="true" ID="m11" Link="card/cardManager.aspx?firstPage=1">
+    <Item ID ="cdi01">
+      <PageLink ID="cdp01" Title="卡片管理" Link="card/cardManager.aspx"/>
+    </Item>
+  </Module>
+  <!--<Module Title="服务站点" ID="m05"  IsDivide="true"  Link="Fenxiao/distributorlist.aspx?firstPage=1">
+    --><!-- <Item ID="fxi01">
      <PageLink ID="fxp01"  Title="分销概况" Link="Fenxiao/DistributorSummary.aspx"/>
       <PageLink ID="fxp02"  Title="分销设置" Link="Fenxiao/distributorapplyset.aspx"/>
       <PageLink ID="fxp14"  Title="分销中心" Link="Fenxiao/distributorcenter.aspx"/>
       <PageLink ID="fxp13"  Title="掌柜名片设置" Link="Fenxiao/StoreCardSet.aspx"/>
-    </Item>-->
+    </Item>--><!--
     <Item ID="fxi02" Title="站点管理" Class="glyphicon ico-fenxiao">
       <PageLink ID="fxp03"  Title="站点管理" Link="Fenxiao/distributorlist.aspx"/>
       <PageLink ID="fxp06"  Title="配送范围" Link="Fenxiao/scope.aspx"/>
       <PageLink ID="fxp13"  Title="店铺详情" Link="shop/DistributorDetails.aspx"/>
       <PageLink ID="fxp08"  Title="奶卡分配" Link="Fenxiao/MilkCardManage.aspx"/>
       <PageLink ID="fxp15"  Title="任务列表" Link="Fenxiao/questlist.aspx"/>
-     <!-- <PageLink ID="fxp04"  Title="分销商等级" Link="Fenxiao/distributorgradelist.aspx"/>
+     --><!-- <PageLink ID="fxp04"  Title="分销商等级" Link="Fenxiao/distributorgradelist.aspx"/>
        <PageLink ID="fxp12"  Title="分销商升级奖励" Link="Fenxiao/distributorupdateset.aspx"/>
       <PageLink ID="fxp05"  Title="销售排行榜" Link="Fenxiao/DistributorStatistics.aspx"/>
       <PageLink ID="fxp11"  Title="自定义排行榜" Link="Fenxiao/CustomDistributorStatistics.aspx"/>
-      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>-->
+      <PageLink ID="fxp07"  Title="批量生成账号" Link="Fenxiao/branchadddistributors.aspx"/>--><!--
     </Item>
-    <!--<Item ID="fxi03" Title="佣金管理" Class="glyphicon ico-yongjin">
+    --><!--<Item ID="fxi03" Title="佣金管理" Class="glyphicon ico-yongjin">
       <PageLink ID="fxp08"  Title="佣金明细" Link="Fenxiao/CommissionsAllList.aspx"/>
       <PageLink ID="fxp09"  Title="提现申请" Link="Fenxiao/BalanceDrawApplyList.aspx"/>
       <PageLink ID="fxp10"  Title="提现记录" Link="Fenxiao/BalanceDrawRequestList.aspx"/>
-    </Item>-->
-  </Module>
-  <Module Title="微信" IsDivide="true" ID="m06" Link="weixin/wxconfig.aspx?firstPage=1">
+    </Item>--><!--
+  </Module>-->
+  <!--<Module Title="微信" IsDivide="true" ID="m06" Link="weixin/wxconfig.aspx?firstPage=1">
     <Item ID="wxi01">
       <PageLink ID="wxp01"  Title="绑定微信公众号" Link="weixin/wxconfig.aspx"/>
     </Item>
@@ -133,7 +138,7 @@
     <Item ID="wxi04" Title="群发" Class="glyphicon ico-qunfa">
       <PageLink ID="wxp10"  Title="微信群发" Link="weixin/sendalllist.aspx"/>
     </Item>
-  </Module>
+  </Module>-->
   <!--<Module Title="微博" IsDivide="true" ID="m07" Link="Weibo/timeline.aspx?firstPage=1">
     <Item ID="wbi01">
       <PageLink ID="wbp01"  Title="绑定微博账号" Link="Weibo/setting.aspx"/>

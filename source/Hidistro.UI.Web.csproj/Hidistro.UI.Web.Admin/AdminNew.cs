@@ -21,6 +21,7 @@ namespace Hidistro.UI.Web.Admin
 		protected Literal litUsername;
 		protected ContentPlaceHolder ContentPlaceHolder1;
 		protected Literal leftMenu;
+        protected string titleLog = string.Empty;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -36,7 +37,9 @@ namespace Hidistro.UI.Web.Admin
 			SiteSettings masterSettings = SettingsManager.GetMasterSettings(true);
 			this.litSitename.Text = masterSettings.SiteName;
 			this.htmlWebTitle = masterSettings.SiteName;
-			this.hiddTelReg.Value = masterSettings.TelReg;
+            this.titleLog = Globals.ApplicationPath + "/admin/images/login-title1.png";
+
+            this.hiddTelReg.Value = masterSettings.TelReg;
 			if (this.Page.IsPostBack)
 			{
 				return;
