@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using Hidistro.SqlDal.Kangaroo;
 using Hidistro.Entities.Kangaroo;
-
+using Hidistro.Core.Entities;
+using Hidistro.Entites.Kangaroo;
 
 namespace Hidistro.ControlPanel.Kangaroo
 {
@@ -38,10 +39,20 @@ namespace Hidistro.ControlPanel.Kangaroo
 			return CardInfoManager.SelectListData(where,selectFields,orderby,top);
 		}
 
-		/// <summary>
-		/// 根据条件查询首行首列
-		/// </summary>
-		public static object GetScalar(string where = null, string selectFields ="*", string orderby = null)
+        public static DbQueryResult GetCardInfoList(CardInfoQuery query)
+        {
+            return CardInfoManager.GetCardInfoList(query);
+        }
+
+        public static DataTable GetCardTypes()
+        {
+            return CardInfoManager.GetCardTypes();
+        }
+
+        /// <summary>
+        /// 根据条件查询首行首列
+        /// </summary>
+        public static object GetScalar(string where = null, string selectFields ="*", string orderby = null)
 		{
 			return CardInfoManager.SelectScalar(where,selectFields,orderby);
 		}

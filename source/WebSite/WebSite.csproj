@@ -166,6 +166,8 @@
     <Content Include="Admin\Bargain\AddBargain.aspx" />
     <Content Include="Admin\Bargain\BargainDetial.aspx" />
     <Content Include="Admin\Bargain\ManagerBargain.aspx" />
+    <Content Include="Admin\Card\EditCard.aspx" />
+    <Content Include="Admin\Card\ManageCards.aspx" />
     <Content Include="Admin\css\artdialog.css" />
     <Content Include="Admin\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Admin\css\bootstrap.min.css" />
@@ -643,7 +645,9 @@
     <Content Include="Admin\Member\setScore_sign.aspx" />
     <Content Include="Admin\Member\SMSSettings.aspx" />
     <Content Include="Admin\Member\UserGroupSet.aspx" />
-    <Content Include="Admin\MenuNew.xml" />
+    <Content Include="Admin\MenuNew.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Admin\NoPermissionShow.aspx" />
     <Content Include="Admin\NotPermisson.aspx" />
     <Content Include="Admin\Oneyuan\AddOneyuanInfo.aspx" />

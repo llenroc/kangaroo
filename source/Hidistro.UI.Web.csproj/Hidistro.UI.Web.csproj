@@ -114,6 +114,12 @@
     <Compile Include="Hidistro.UI.Web.Admin.Bargain\ManagerBargain.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Hidistro.UI.Web.Admin.Card\EditCard.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hidistro.UI.Web.Admin.Card\ManageCards.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Hidistro.UI.Web.Admin.distributor\DistributorLogoUpload.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

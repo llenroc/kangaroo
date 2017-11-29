@@ -33,6 +33,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hidistro.Entites.Kangaroo\CardInfoEntity.cs" />
+    <Compile Include="Hidistro.Entites.Kangaroo\CardInfoQuery.cs" />
+    <Compile Include="Hidistro.Entites.Kangaroo\CardTypeInfoEntity.cs" />
     <Compile Include="Hidistro.Entities.Bargain\BargainDetialInfo.cs" />
     <Compile Include="Hidistro.Entities.Bargain\BargainInfo.cs" />
     <Compile Include="Hidistro.Entities.Bargain\BargainQuery.cs" />

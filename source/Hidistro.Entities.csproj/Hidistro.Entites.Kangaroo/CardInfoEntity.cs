@@ -2,12 +2,11 @@ using System;
 using System.Data;
 using System.Collections;
 
-namespace Hidistro.Entities.Kangaroo
-{
-    /// <summary>
-    /// -实体类
-    /// </summary>
-    [Serializable]
+namespace Hidistro.Entities.Kangaroo {
+	/// <summary>
+	/// -实体类
+	/// </summary>
+	[Serializable]
 	public  class CardInfoEntity {
 
 		#region 字段名
@@ -27,8 +26,8 @@ namespace Hidistro.Entities.Kangaroo
 		#endregion
 
 		#region 属性
-		private int  _iD;
-		public int  ID
+		private Guid  _iD;
+		public Guid  ID
 		{
 			get{ return _iD;}
 			set{ _iD=value;}
@@ -45,8 +44,8 @@ namespace Hidistro.Entities.Kangaroo
 			get{ return _cardNumber;}
 			set{ _cardNumber=value;}
 		}
-		private int  _cardTypeId;
-		public int  CardTypeId
+		private Guid  _cardTypeId;
+		public Guid  CardTypeId
 		{
 			get{ return _cardTypeId;}
 			set{ _cardTypeId=value;}
@@ -87,8 +86,8 @@ namespace Hidistro.Entities.Kangaroo
 			get{ return _cardFrom;}
 			set{ _cardFrom=value;}
 		}
-		private int  _shopId;
-		public int  ShopId
+		private Guid  _shopId;
+		public Guid  ShopId
 		{
 			get{ return _shopId;}
 			set{ _shopId=value;}
@@ -114,7 +113,7 @@ namespace Hidistro.Entities.Kangaroo
 		{
 			if (dr[FieldID] != DBNull.Value)
 			{
-			_iD = (int )dr[FieldID];
+			_iD = (Guid )dr[FieldID];
 			}
 			if (dr[FieldMemberId] != DBNull.Value)
 			{
@@ -126,7 +125,7 @@ namespace Hidistro.Entities.Kangaroo
 			}
 			if (dr[FieldCardTypeId] != DBNull.Value)
 			{
-			_cardTypeId = (int )dr[FieldCardTypeId];
+			_cardTypeId = (Guid )dr[FieldCardTypeId];
 			}
 			if (dr[FieldBalance] != DBNull.Value)
 			{
@@ -154,7 +153,7 @@ namespace Hidistro.Entities.Kangaroo
 			}
 			if (dr[FieldShopId] != DBNull.Value)
 			{
-			_shopId = (int )dr[FieldShopId];
+			_shopId = (Guid )dr[FieldShopId];
 			}
 			if (dr[FieldStatus] != DBNull.Value)
 			{

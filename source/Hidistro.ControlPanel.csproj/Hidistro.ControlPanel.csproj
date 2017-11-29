@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hidistro.ControlPanel\Kangaroo\CardInfoBusiness.cs" />
+    <Compile Include="Hidistro.ControlPanel\Kangaroo\CardTypeInfoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>false</AutoGen>
       <DesignTimeSharedInput>false</DesignTimeSharedInput>

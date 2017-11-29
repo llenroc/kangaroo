@@ -15,18 +15,6 @@ using Hidistro.UI.Common.Controls;
 using Hidistro.UI.ControlPanel.Utility;
 using Hishop.Plugins;
 using Ionic.Zlib;
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Data;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
 using System.Xml;
 
 namespace Hidistro.UI.Web.Admin.member
@@ -79,8 +67,7 @@ namespace Hidistro.UI.Web.Admin.member
 		protected System.Web.UI.WebControls.TextBox txtSearchText;
 
 		protected System.Web.UI.WebControls.TextBox txtPhone;
-
-		protected System.Web.UI.WebControls.TextBox txtStoreName;
+        
 
 		protected System.Web.UI.WebControls.TextBox txtRealName;
 
@@ -337,7 +324,6 @@ namespace Hidistro.UI.Web.Admin.member
 				this.rankList.SelectedValue = this.rankId;
 				this.txtSearchText.Text = this.searchKey;
 				this.txtRealName.Text = this.realName;
-				this.txtStoreName.Text = this.storeName;
 				this.MemberStatus.SelectedValue = this.mstatus;
 				this.txtPhone.Text = this.phone;
 				return;
@@ -345,7 +331,6 @@ namespace Hidistro.UI.Web.Admin.member
 			this.rankId = this.rankList.SelectedValue;
 			this.searchKey = this.txtSearchText.Text;
 			this.realName = this.txtRealName.Text.Trim();
-			this.storeName = this.txtStoreName.Text;
 		}
 
 		private void ReBind(bool isSearch)
@@ -357,7 +342,6 @@ namespace Hidistro.UI.Web.Admin.member
 			}
 			nameValueCollection.Add("Username", this.txtSearchText.Text);
 			nameValueCollection.Add("realName", this.txtRealName.Text);
-			nameValueCollection.Add("StoreName", this.txtStoreName.Text);
 			nameValueCollection.Add("MemberStatus", this.MemberStatus.SelectedItem.Value);
 			nameValueCollection.Add("clientType", (this.ViewState["ClientType"] != null) ? this.ViewState["ClientType"].ToString() : "");
 			nameValueCollection.Add("pageSize", this.pager.PageSize.ToString(System.Globalization.CultureInfo.InvariantCulture));

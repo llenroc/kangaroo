@@ -552,6 +552,14 @@ namespace Hidistro.ControlPanel.Members
             return new MemberDao().GetMemberClientSet();
         }
 
+        /// <summary>
+        /// 获取用户快速检索信息(id,name)
+        /// </summary>
+        public static DataTable GetMemberSelectInfo()
+        {
+            return new MemberDao().GetMemberSelectInfo();
+        }
+
         public static int SetRegion(string userID, int regionId)
         {
             return new MemberDao().SetRegion(userID, regionId);

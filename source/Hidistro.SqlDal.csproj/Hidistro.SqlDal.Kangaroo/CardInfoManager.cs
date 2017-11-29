@@ -1,10 +1,13 @@
 using Hidistro.Core;
+using Hidistro.Core.Entities;
+using Hidistro.Entites.Kangaroo;
 using Hidistro.Entities;
 using Hidistro.Entities.Kangaroo;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace Hidistro.SqlDal.Kangaroo
 {
@@ -52,10 +55,78 @@ namespace Hidistro.SqlDal.Kangaroo
 			return ds.Tables[0];
 		}
 
-		/// <summary>
-		/// 根据条件查询首行首列
-		/// </summary>
-		public static object SelectScalar(string where = null, string selectFields ="*", string orderby = null)
+        public static DataTable GetCardTypes()
+        {
+            string selectSql = string.Format(@"Select * From CardTypeInfo");
+            DataSet ds = DataAccessFactory.GetDataProvider().GetDataset(selectSql);
+            ds.Tables[0].TableName = "CardTypeInfo";
+            ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns["ID"] };
+            return ds.Tables[0];
+        }
+
+        public static DbQueryResult GetCardInfoList(CardInfoQuery query)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            if (!string.IsNullOrEmpty(query.CardNumber))
+            {
+                if (stringBuilder.Length > 0)
+                {
+                    stringBuilder.Append(" AND ");
+                }
+                stringBuilder.AppendFormat(" CardNumber = '{0}'", DataHelper.CleanSearchString(query.CardNumber));
+            }
+            if (!string.IsNullOrEmpty(query.UserName))
+            {
+                if (stringBuilder.Length > 0)
+                {
+                    stringBuilder.Append(" AND ");
+                }
+                stringBuilder.AppendFormat(" UserName like '%{0}%'", DataHelper.CleanSearchString(query.UserName));
+            }
+            if (!string.IsNullOrEmpty(query.StartTime))
+            {
+                if (stringBuilder.Length > 0)
+                {
+                    stringBuilder.Append(" AND ");
+                }
+                stringBuilder.AppendFormat(" CreateTime >= '{0}'", DataHelper.CleanSearchString(query.StartTime));
+            }
+
+            if (!string.IsNullOrEmpty(query.EndTime))
+            {
+                if (stringBuilder.Length > 0)
+                {
+                    stringBuilder.Append(" AND ");
+                }
+                stringBuilder.AppendFormat(" CreateTime <= '{0}'", DataHelper.CleanSearchString(query.EndTime));
+            }
+
+            if (!string.IsNullOrEmpty(query.UserPhone))
+            {
+                if (stringBuilder.Length > 0)
+                {
+                    stringBuilder.Append(" AND ");
+                }
+                stringBuilder.AppendFormat(" CellPhone = '{0}'", DataHelper.CleanSearchString(query.UserPhone));
+            }
+            if (!string.IsNullOrEmpty(query.Status))
+            {
+                if(stringBuilder.Length > 0)
+                {
+                    stringBuilder.Append(" AND");
+                }
+                stringBuilder.AppendFormat(" c.Status = {0}", DataHelper.CleanSearchString(query.Status));
+            }
+
+
+
+            return DataHelper.PagingByRownumber(query.PageIndex, query.PageSize, query.SortBy, query.SortOrder, query.IsCount, "CardInfo c left join aspnet_Members am on am.userid=c.memberId left join cardtypeinfo ct on c.CardTypeId = ct.id left join ShopInfo si on c.ShopId = si.ID ", "ID", (stringBuilder.Length > 0) ? stringBuilder.ToString() : null, "c.*,am.UserName,am.CellPhone,ct.typename,ct.amountlevel,si.ShopName");
+        }
+
+        /// <summary>
+        /// 根据条件查询首行首列
+        /// </summary>
+        public static object SelectScalar(string where = null, string selectFields ="*", string orderby = null)
 		{
 			if (!string.IsNullOrEmpty(where)) where = " Where " + where;
 			string selectSql = string.Format(@"Select {1} From CardInfo {0}", where, selectFields);
@@ -125,7 +196,7 @@ namespace Hidistro.SqlDal.Kangaroo
 				DataAccessFactory.GetDataProvider().Execute(execSql, para);
 				return true;
 			}
-			catch
+			catch(Exception ex)
 			{
 				return false;
 			}

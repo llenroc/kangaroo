@@ -89,9 +89,9 @@
       <PageLink ID="hyp09"  Title="购买短信套餐" Target="_blank" Link="http://sms.kuaidiantong.cn/SMSPackList.aspx"/>
     </Item>-->
   </Module>
-  <Module Title="卡片" IsDivide="true" ID="m11" Link="card/cardManager.aspx?firstPage=1">
+  <Module Title="卡片" IsDivide="true" ID="m11" Link="card/ManageCards.aspx?firstPage=1">
     <Item ID ="cdi01">
-      <PageLink ID="cdp01" Title="卡片管理" Link="card/cardManager.aspx"/>
+      <PageLink ID="cdp01" Title="卡片管理" Link="card/ManageCards.aspx"/>
     </Item>
   </Module>
   <!--<Module Title="服务站点" ID="m05"  IsDivide="true"  Link="Fenxiao/distributorlist.aspx?firstPage=1">

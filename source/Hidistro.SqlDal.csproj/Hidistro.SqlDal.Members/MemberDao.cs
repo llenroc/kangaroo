@@ -1164,7 +1164,20 @@ namespace Hidistro.SqlDal.Members
 			return list;
 		}
 
-		public IList<int> GetCustomGroupMemberList(string CustomGroup)
+        public DataTable GetMemberSelectInfo()
+        {
+            DataTable result = new DataTable();
+            DbCommand sqlstringcommand = this.database.GetSqlStringCommand("select userid,username,cellphone from aspnet_members");
+            using (System.Data.IDataReader dataReader = this.database.ExecuteReader(sqlstringcommand))
+            {
+                result = DataHelper.ConverDataReaderToDataTable(dataReader);
+                dataReader.Close();
+            }
+            return result;
+        }
+
+
+        public IList<int> GetCustomGroupMemberList(string CustomGroup)
 		{
 			IList<int> list = new List<int>();
 			string query;
